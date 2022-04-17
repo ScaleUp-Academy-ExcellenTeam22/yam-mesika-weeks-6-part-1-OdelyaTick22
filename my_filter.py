@@ -1,4 +1,14 @@
-def my_filter(function, iterable):
+from typing import Iterable
+from types import FunctionType
+
+
+def my_filter(function: FunctionType, iterable: Iterable) -> Iterable:
+    """
+    A function called my_filter that behaves just like the filter function.
+    :param function: The function on which the filter will operate.
+    :param iterable: Iterable on which the function will pass.
+    :return: Iterable of all the parameters for which the function returns True.
+    """
     for item in iterable:
         if function(item):
             yield item
