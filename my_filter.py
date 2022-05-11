@@ -1,8 +1,9 @@
 from typing import Iterable
 from types import FunctionType
+from collections.abc import Callable
 
 
-def my_filter(function: FunctionType, iterable: Iterable) -> Iterable:
+def my_filter(function: Callable, iterable: Iterable) -> Iterable:
     """
     A function called my_filter that behaves just like the filter function.
     :param function: The function on which the filter will operate.
