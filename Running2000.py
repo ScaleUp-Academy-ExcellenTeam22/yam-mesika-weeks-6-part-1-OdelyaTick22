@@ -1,7 +1,12 @@
 from time import process_time
+from collections.abc import Callable
+from typing import Generic, TypeVar
 
 
-def timer(f, *params):
+T = TypeVar('T')
+
+
+def timer(f:Callable, *params:Generic[T])-> float:
     """
     The timer function will measure how long a function f ran when the sent parameters are passed to it.
     :param f: The measured function.
