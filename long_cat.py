@@ -8,8 +8,7 @@ def count_words(txt: str) -> dict:
     :return: A dictionary of the text's words lengths
     """
     regex = re.compile('[^a-zA-Z]')
-    words = [regex.sub('', word) for word in txt.split()]
-    words_length = {word: len(word) for word in words}
+    words_length = {word: len(word) for word in [regex.sub('', word) for word in txt.split()]}
     return words_length
 
 
