@@ -9,10 +9,10 @@ def full_names(first_names: List, last_names: List, min_length=0) -> List:
     :param min_length: Minimum length of full name.
     :return: A list of full names whose length is greater than the minimum length requested.
     """
-    new_names = [f'{f_name.capitalize()} {l_name.capitalize()}'
-                 for f_name in first_names
-                 for l_name in last_names]
-    return [full_name for full_name in new_names if len(full_name) >= min_length]
+    return [f'{f_name.capitalize()} {l_name.capitalize()}'
+            for f_name in first_names
+            for l_name in last_names
+            if len(f'{f_name} {l_name}') >= min_length]
 
 
 if __name__ == '__main__':
